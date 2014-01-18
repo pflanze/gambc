@@ -3954,6 +3954,9 @@
 (define ##load-source-if-more-recent #f)
 (set! ##load-source-if-more-recent #t)
 
+(define current-warn-undefined-variables?
+  (make-parameter #t))
+
 (define-prim (##load-object-file abs-path quiet?)
 
   (##define-macro (module-prefix)
@@ -3986,12 +3989,15 @@
                          (let ((var-module (##car lst)))
                            (##repl
                             (lambda (first output-port)
-                              (##write-string "*** WARNING -- Variable " output-port)
-                              (##write (##car var-module) output-port)
-                              (##write-string " used in module " output-port)
-                              (##write (##cdr var-module) output-port)
-                              (##write-string " is undefined" output-port)
-                              (##newline output-port)
+			      (if (current-warn-undefined-variables?)
+				  (begin
+				    (##write-string "*** WARNING -- Variable "
+						    output-port)
+				    (##write (##car var-module) output-port)
+				    (##write-string " used in module " output-port)
+				    (##write (##cdr var-module) output-port)
+				    (##write-string " is undefined" output-port)
+				    (##newline output-port)))
                               #t))
                            (loop (##cdr lst)))))))
              result)))))

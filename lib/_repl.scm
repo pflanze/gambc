@@ -2409,17 +2409,33 @@
 
   (##exit))
 
+
+(define current-clean-exception-handling (make-parameter #f))
+
+
 (define-prim (##repl-within cont write-reason reason)
 
   (define (with-clean-exception-handling repl-context thunk)
-    (##with-exception-catcher
-     (lambda (exc)
-       (##continuation-graft ;; get rid of any useless continuation frames
-        (macro-repl-context-cont repl-context)
-        (lambda ()
-          (release-ownership!)
-          (macro-raise exc))))
-     thunk))
+    (let ((old-handler (current-exception-handler)))
+      (with-exception-handler
+       (lambda (exc)
+	 (if (current-clean-exception-handling)
+	     (##continuation-graft ;; get rid of any useless continuation frames
+	      (macro-repl-context-cont repl-context)
+	      (lambda ()
+		(release-ownership!)
+		(macro-raise exc)))
+	     (continuation-capture
+	      (lambda (cont)
+		(##continuation-graft
+		 (macro-repl-context-cont repl-context)
+		 (lambda ()
+		   (release-ownership!)
+		   (##continuation-graft
+		    cont
+		    (lambda ()
+		      (old-handler exc)))))))))
+       thunk)))
 
   (define (acquire-ownership!)
     (##repl-channel-acquire-ownership!))

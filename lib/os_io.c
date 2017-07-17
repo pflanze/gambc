@@ -1186,6 +1186,8 @@ ___BOOL for_writing;)
   else
     FD_SET(fd, &state->readfds);
 
+  FD_SET(fd, &state->exceptfds);
+
   if (fd >= state->highest_fd_plus_1)
     state->highest_fd_plus_1 = fd+1;
 }

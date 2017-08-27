@@ -253,7 +253,7 @@ void **linker;)
 #ifdef USE_dlopen
 
 #ifdef RTLD_NOW
-  p->descr = dlopen (cpath, RTLD_NOW);
+  p->descr = dlopen (cpath, RTLD_NOW|RTLD_GLOBAL);
 #else
   p->descr = dlopen (cpath, 1);
 #endif

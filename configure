@@ -7630,14 +7630,14 @@ ac_test_CFLAGS=${CFLAGS+set}
 ac_test_CXXFLAGS=${CXXFLAGS+set}
 ac_save_CFLAGS=$CFLAGS
 ac_save_CXXFLAGS=$CXXFLAGS
-CFLAGS="-fomit-frame-pointer"
-CXXFLAGS="-fomit-frame-pointer"
+CFLAGS=""
+CXXFLAGS=""
 if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
   (eval $ac_link) 2>&5
   ac_status=$?
   echo "$as_me:$LINENO: \$? = $ac_status" >&5
   (exit $ac_status); }; then
-  DASH_fomit_frame_pointer=" -fomit-frame-pointer"
+  DASH_fomit_frame_pointer=" "
 else
   DASH_fomit_frame_pointer=""
 fi

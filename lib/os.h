@@ -1001,7 +1001,9 @@ ___END_C_LINKAGE
 #ifdef INCLUDE_sys_stat_h
 #ifdef HAVE_SYS_STAT_H
 /* the following defines are useful on Linux to map stat to stat64 */
+#ifndef __USE_LARGEFILE64
 #define __USE_LARGEFILE64
+#endif
 #define __USE_FILE_OFFSET64
 #include <sys/stat.h>
 #endif

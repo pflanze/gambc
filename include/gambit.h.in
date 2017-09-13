@@ -1854,26 +1854,26 @@ ___CAST_U64((val)<<(((i)&7)<<3))
  * Value constructors for object references inside executable code.
  */
 
-#define ___FAL ((___CAST(___WORD,-1)<<___TB)+___tSPECIAL)
-#define ___TRU ((___CAST(___WORD,-2)<<___TB)+___tSPECIAL)
-#define ___NUL ((___CAST(___WORD,-3)<<___TB)+___tSPECIAL)
-#define ___EOF ((___CAST(___WORD,-4)<<___TB)+___tSPECIAL)
-#define ___VOID ((___CAST(___WORD,-5)<<___TB)+___tSPECIAL)
-#define ___ABSENT ((___CAST(___WORD,-6)<<___TB)+___tSPECIAL)
-#define ___UNB1 ((___CAST(___WORD,-7)<<___TB)+___tSPECIAL)
-#define ___UNB2 ((___CAST(___WORD,-8)<<___TB)+___tSPECIAL)
-#define ___OPTIONAL ((___CAST(___WORD,-9)<<___TB)+___tSPECIAL)
-#define ___KEY_OBJ ((___CAST(___WORD,-10)<<___TB)+___tSPECIAL)
-#define ___REST ((___CAST(___WORD,-11)<<___TB)+___tSPECIAL)
-#define ___UNUSED ((___CAST(___WORD,-14)<<___TB)+___tSPECIAL)
-#define ___DELETED ((___CAST(___WORD,-15)<<___TB)+___tSPECIAL)
-#define ___FIX(x)(___CAST(___WORD,x)<<___TB)
+#define ___FAL (___CAST(___WORD, (___CAST(unsigned ___WORD,-1)<<___TB))+___tSPECIAL)
+#define ___TRU (___CAST(___WORD, (___CAST(unsigned ___WORD,-2)<<___TB))+___tSPECIAL)
+#define ___NUL (___CAST(___WORD, (___CAST(unsigned ___WORD,-3)<<___TB))+___tSPECIAL)
+#define ___EOF (___CAST(___WORD, (___CAST(unsigned ___WORD,-4)<<___TB))+___tSPECIAL)
+#define ___VOID (___CAST(___WORD, (___CAST(unsigned ___WORD,-5)<<___TB))+___tSPECIAL)
+#define ___ABSENT (___CAST(___WORD, (___CAST(unsigned ___WORD,-6)<<___TB))+___tSPECIAL)
+#define ___UNB1 (___CAST(___WORD, (___CAST(unsigned ___WORD,-7)<<___TB))+___tSPECIAL)
+#define ___UNB2 (___CAST(___WORD, (___CAST(unsigned ___WORD,-8)<<___TB))+___tSPECIAL)
+#define ___OPTIONAL (___CAST(___WORD, (___CAST(unsigned ___WORD,-9)<<___TB))+___tSPECIAL)
+#define ___KEY_OBJ (___CAST(___WORD, (___CAST(unsigned ___WORD,-10)<<___TB))+___tSPECIAL)
+#define ___REST (___CAST(___WORD, (___CAST(unsigned ___WORD,-11)<<___TB))+___tSPECIAL)
+#define ___UNUSED (___CAST(___WORD, (___CAST(unsigned ___WORD,-14)<<___TB))+___tSPECIAL)
+#define ___DELETED (___CAST(___WORD, (___CAST(unsigned ___WORD,-15)<<___TB))+___tSPECIAL)
+#define ___FIX(x)(___CAST(___WORD, (___CAST(unsigned ___WORD,x)<<___TB)))
 #if ___SCMOBJ_WIDTH == 32
 #define ___BIGFIX(i,x)___SUB(i)
 #else
 #define ___BIGFIX(i,x)___FIX(x)
 #endif
-#define ___CHR(x)((___CAST(___WORD,___CS_SELECT(___CAST_U8(x),___CAST_U16(x),___CAST_U32(x)))<<___TB)+___tSPECIAL)
+#define ___CHR(x)(___CAST(___WORD, (___CAST(unsigned ___WORD,___CS_SELECT(___CAST_U8(x),___CAST_U16(x),___CAST_U32(x)))<<___TB))+___tSPECIAL)
 
 #define ___SYM(i,id)___CAST_FAKEWORD_TO_WORD(___sym_tbl[i])
 #define ___KEY(i,id)___CAST_FAKEWORD_TO_WORD(___key_tbl[i])
@@ -1906,10 +1906,10 @@ ___CAST_U64((val)<<(((i)&7)<<3))
 #endif
 #define ___REF_CHR(x)___CHR(x)
 
-#define ___REF_SYM(i,id)((___CAST(___WORD,-1-i)<<___TB)+___tPAIR)
-#define ___REF_KEY(i,id)((___CAST(___WORD,-1-i)<<___TB)+___tSUBTYPED)
-#define ___REF_CNS(i)((___CAST(___WORD,i)<<___TB)+___tPAIR)
-#define ___REF_SUB(i)((___CAST(___WORD,i)<<___TB)+___tSUBTYPED)
+#define ___REF_SYM(i,id)(___CAST(___WORD, (___CAST(unsigned ___WORD,-1-i)<<___TB))+___tPAIR)
+#define ___REF_KEY(i,id)(___CAST(___WORD, (___CAST(unsigned ___WORD,-1-i)<<___TB))+___tSUBTYPED)
+#define ___REF_CNS(i)(___CAST(___WORD, (___CAST(unsigned ___WORD,i)<<___TB))+___tPAIR)
+#define ___REF_SUB(i)(___CAST(___WORD, (___CAST(unsigned ___WORD,i)<<___TB))+___tSUBTYPED)
 
 /*---------------------------------------------------------------------------*/
 

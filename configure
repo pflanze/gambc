@@ -7635,10 +7635,10 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
   ac_status=$?
   echo "$as_me:$LINENO: \$? = $ac_status" >&5
   (exit $ac_status); }; then
-  DASH_fomit_frame_pointer=" "
-else
-  DASH_fomit_frame_pointer=""
+    true
 fi
+DASH_fomit_frame_pointer=" -Wno-write-strings -std=c++11 -gdwarf-4 -g3 -D_GLIBCXX_DEBUG "
+
 if test "$ac_test_CFLAGS" = set; then
   CFLAGS=$ac_save_CFLAGS
 fi

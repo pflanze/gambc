@@ -3180,7 +3180,8 @@
       (let ((x (##os-err-code->string code)))
         (if (##string? x)
           x
-          "Error code could not be converted to a string")))
+          (string-append "Error code could not be converted to a string: "
+			 (number->string code)))))
 
     (cond ((macro-abandoned-mutex-exception? exc)
            (##write-string "MUTEX was abandoned" port)

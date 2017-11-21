@@ -7637,7 +7637,7 @@ if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
   (exit $ac_status); }; then
     true
 fi
-DASH_fomit_frame_pointer=" -Wno-write-strings -std=c++11 -gdwarf-4 -g3 -D_GLIBCXX_DEBUG "
+DASH_fomit_frame_pointer=" -Wno-write-strings -gdwarf-4 -g3 ${GAMBIT_CXX_FLAGS-}"
 
 if test "$ac_test_CFLAGS" = set; then
   CFLAGS=$ac_save_CFLAGS

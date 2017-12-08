@@ -10952,11 +10952,12 @@
         ((char=? c #\<) #\>)
         (else           #\))))
 
+(define current-read-square-as-vector? (make-parameter #f))
+
 (define (##read-vector-or-list re c)
-  (if (macro-readtable-r6rs-compatible-read?
-       (macro-readenv-readtable re))
-      (##read-list re c)
-      (##read-vector re c)))
+  (if (current-read-square-as-vector?)
+      (##read-vector re c)
+      (##read-list re c)))
 
 (define (##read-list re c)
   (let ((start-pos (##readenv-current-filepos re)))

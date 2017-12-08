@@ -4713,6 +4713,7 @@
 "current-clean-exception-handling"
 "current-exception-handler"
 "current-output-port"
+"current-read-square-as-vector?"
 "current-warn-undefined-variables?"
 "default-random-source"
 "delete-directory"
@@ -11047,6 +11048,7 @@ ___DEF_OLD_SYM_GLO(___S_current_2d_error_2d_port,___G_current_2d_error_2d_port)
 ___DEF_OLD_SYM_GLO(___S_current_2d_exception_2d_handler,___G_current_2d_exception_2d_handler)
 ___DEF_OLD_SYM_GLO(___S_current_2d_input_2d_port,___G_current_2d_input_2d_port)
 ___DEF_OLD_SYM_GLO(___S_current_2d_output_2d_port,___G_current_2d_output_2d_port)
+___DEF_OLD_SYM_GLO(___S_current_2d_read_2d_square_2d_as_2d_vector_3f_,___G_current_2d_read_2d_square_2d_as_2d_vector_3f_)
 ___DEF_OLD_SYM_GLO(___S_current_2d_readtable,___G_current_2d_readtable)
 ___DEF_OLD_SYM_GLO(___S_current_2d_thread,___G_current_2d_thread)
 ___DEF_OLD_SYM_GLO(___S_current_2d_time,___G_current_2d_time)

@@ -8767,9 +8767,13 @@
           ((##eq? head (macro-readtable-angle-keyword rt))   '("<" . ">"))
           (else                                              default))))
 
+
+(define current-default-vector-open-close
+  (make-parameter '("#(" . ")")))
+
 (define-prim (##wr-vector we obj)
   (let* ((std-open-close
-          '("#(" . ")"))
+          (current-default-vector-open-close))
          (open-close
           (if (macro-readtable-r6rs-compatible-write?
                (macro-writeenv-readtable we))

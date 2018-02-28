@@ -8771,9 +8771,16 @@
 (define current-default-vector-open-close
   (make-parameter '("#(" . ")")))
 
+;; this is easier and more consistent with
+;; |current-read-square-as-vector?| (and type safe, too):
+(define current-write-vector-as-square?
+  (make-parameter #f))
+
 (define-prim (##wr-vector we obj)
   (let* ((std-open-close
-          (current-default-vector-open-close))
+	  (if (current-write-vector-as-square?)
+	      '("[" . "]")
+	      (current-default-vector-open-close)))
          (open-close
           (if (macro-readtable-r6rs-compatible-write?
                (macro-writeenv-readtable we))

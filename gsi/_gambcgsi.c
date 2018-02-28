@@ -2917,6 +2917,7 @@
 "create-link"
 "create-symbolic-link"
 "current-clean-exception-handling"
+"current-default-vector-open-close"
 "current-exception-handler"
 "current-read-square-as-vector?"
 "current-warn-undefined-variables?"
@@ -7185,6 +7186,7 @@ ___DEF_OLD_SYM_GLO(___S_create_2d_link,___G_create_2d_link)
 ___DEF_OLD_SYM_GLO(___S_create_2d_symbolic_2d_link,___G_create_2d_symbolic_2d_link)
 ___DEF_OLD_SYM_GLO(___S_creation_2d_time,___G_creation_2d_time)
 ___DEF_OLD_SYM_GLO(___S_current_2d_clean_2d_exception_2d_handling,___G_current_2d_clean_2d_exception_2d_handling)
+___DEF_OLD_SYM_GLO(___S_current_2d_default_2d_vector_2d_open_2d_close,___G_current_2d_default_2d_vector_2d_open_2d_close)
 ___DEF_OLD_SYM_GLO(___S_current_2d_directory,___G_current_2d_directory)
 ___DEF_OLD_SYM_GLO(___S_current_2d_error_2d_port,___G_current_2d_error_2d_port)
 ___DEF_OLD_SYM_GLO(___S_current_2d_exception_2d_handler,___G_current_2d_exception_2d_handler)

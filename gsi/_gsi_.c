@@ -2924,6 +2924,7 @@
 "current-exception-handler"
 "current-read-square-as-vector?"
 "current-warn-undefined-variables?"
+"current-write-vector-as-square?"
 "default-random-source"
 "delete-directory"
 "delete-file"
@@ -7202,6 +7203,7 @@ ___DEF_OLD_SYM_GLO(___S_current_2d_thread,___G_current_2d_thread)
 ___DEF_OLD_SYM_GLO(___S_current_2d_time,___G_current_2d_time)
 ___DEF_OLD_SYM_GLO(___S_current_2d_user_2d_interrupt_2d_handler,___G_current_2d_user_2d_interrupt_2d_handler)
 ___DEF_OLD_SYM_GLO(___S_current_2d_warn_2d_undefined_2d_variables_3f_,___G_current_2d_warn_2d_undefined_2d_variables_3f_)
+___DEF_OLD_SYM_GLO(___S_current_2d_write_2d_vector_2d_as_2d_square_3f_,___G_current_2d_write_2d_vector_2d_as_2d_square_3f_)
 ___DEF_OLD_SYM_GLO(___S_cursor,___G_cursor)
 ___DEF_OLD_SYM_GLO(___S_d,___G_d)
 ___DEF_OLD_SYM_GLO(___S_datum_2d_expected,___G_datum_2d_expected)

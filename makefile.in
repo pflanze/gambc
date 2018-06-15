@@ -93,7 +93,7 @@ all:
 all-pre:
 
 all-post:
-	test -f "gsc-comp@exe@" || cp gsc/gsc@exe@ gsc-comp@exe@
+	test -f "gsc-comp@exe@" || ( cp gsc/gsc@exe@ gsc-comp@exe@ || true )
 
 fake_target:
 
@@ -101,7 +101,7 @@ doc info pdf html txt: fake_target
 	cd doc && $(MAKE) $(MDEFINES) $@
 
 bootstrap: fake_target all
-	cp gsc/gsc@exe@ gsc-comp@exe@
+	cp gsc/gsc@exe@ gsc-comp@exe@ || true
 
 check: fake_target all
 	cd tests && $(MAKE) $(MDEFINES) $@

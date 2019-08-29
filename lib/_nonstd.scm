@@ -139,23 +139,23 @@
                               rev-params-vals)))))
           ((##null? bindings)
            (if (##null? rev-params-vals)
-             (##cons 'let (##cons '() body))
+             (##cons '##let (##cons '() body))
              (let ((params-vals (##reverse rev-params-vals)))
 
                (define (bind params-vals)
                  (if (##null? params-vals)
-                   (##cons 'let (##cons '() body))
+                   (##cons '##let (##cons '() body))
                    (let* ((param-val (##car params-vals))
                           (param (##car param-val))
                           (val (##cdr param-val)))
                      (##list '##parameterize
                              (##car param)
                              (##car val)
-                             (##list 'lambda
+                             (##list '##lambda
                                      '()
                                      (bind (##cdr params-vals)))))))
 
-               (##list 'let
+               (##list '##let
                        (let loop ((lst rev-params-vals) (bs '()))
                          (if (##null? lst)
                            bs
